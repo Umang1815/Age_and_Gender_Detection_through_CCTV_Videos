@@ -1,0 +1,32 @@
+import torch
+import torch.nn as nn
+import timm
+
+class MultilabelSwinL(nn.Module):
+    def __init__(self, n_age=5, n_gender=2):
+        super().__init__()
+        self.swin_l =  timm.create_model('swin_large_patch4_window7_224', pretrained=False)
+        self.swin_l.head = nn.Identity()
+        
+
+        self.age = nn.Sequential(
+            nn.Dropout(p=0.2),
+            nn.Linear(in_features=1536, out_features=512),
+            nn.Dropout(p=0.2),
+            nn.Linear(in_features = 512, out_features = n_age)
+        )
+        self.gender = nn.Sequential(
+            nn.Dropout(p=0.4),
+            nn.Linear(in_features=1536, out_features=64),
+            nn.Dropout(p=0.4),
+            nn.Linear(in_features=64, out_features=n_gender)
+        )
+       
+    def forward(self, x):
+        x = self.swin_l(x)
+        x = torch.flatten(x, 1)
+
+        x_age = self.age(x)
+        x_gender = self.gender(x)
+
+        return x_gender
