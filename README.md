@@ -4,4 +4,4 @@
 
 ### Image Pipeline
 
-![alt text](https://github.com/Umang1815/Age_and_Gender_Detection_through_CCTV_Videos/blob/main/pics/image.jpg?raw=true)
+![plot](https://github.com/Umang1815/Age_and_Gender_Detection_through_CCTV_Videos/blob/main/pics/image.jpg?raw=true)
