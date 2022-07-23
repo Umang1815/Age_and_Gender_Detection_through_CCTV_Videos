@@ -16,20 +16,18 @@ Following approach was used to build the desired system.
 - **Upscaling**: Surveillance video usually have a low quality making it difficult to identify the person's face. To overcome this issue upscaling of face and body images extracted from the video was needed. SwinIR was used for this purpose. This task can be skipped to increase the fps of the system.
 - **Models**: SWIN Transformer was used as a backbone to predict both age and gender of a person. The diagram of the backbone is given below.
 
-![Flow_dia_model]()
+![Flow_dia_model](https://github.com/Umang1815/Age_and_Gender_Detection_through_CCTV_Videos/blob/main/flow_dia.png)
  
 - **Dataset**: Details of the dataset that were used to train the model are given below
 
-![Dataset_Tabel]()
+![Dataset_Tabel](https://github.com/Umang1815/Age_and_Gender_Detection_through_CCTV_Videos/blob/main/dataset_tab.png)
 
 - **Inference**: To improve predictions, we applied two techniques at the time of inference:
 1) To get the gender information accross frames, we took the mode of the gender predictions from all the frames, as our final output
 2) To get better age windows, we dynamically allocated the age windows, based on the confidence of the prediction of Coral Layer
 # Pipeline
 
-![Image_Pipeline]()
-
-- 
+![Image_Pipeline](https://github.com/Umang1815/Age_and_Gender_Detection_through_CCTV_Videos/blob/main/Pipeline_dia.png)
 
 # User Guide
 
@@ -86,6 +84,6 @@ demo_Gids/video.mp4 --display --hrvid # applies upscaling and displays
 
 To build an efficient system we have trained the datasets on various models. Models and it's performance are given below.
 
-![Model_Tabel]()
+![Model_Tabel](https://github.com/Umang1815/Age_and_Gender_Detection_through_CCTV_Videos/blob/main/model_tab.png)
 
 From the table it is visible that **Multi-Head Swin + Coral(trained on the outputs of SwinIR)** outperformed other models
