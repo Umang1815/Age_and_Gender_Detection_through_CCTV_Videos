@@ -31,6 +31,8 @@ Following approach was used to build the desired system.
 
 # User Guide
 
+All weights files can be found [here](https://drive.google.com/drive/folders/1je0qOl4zY2aJoPHACK2CpqQXzEoWHSfl?usp=sharing).
+
 **Setting Up**
 ```
 conda create -f environment.yml
