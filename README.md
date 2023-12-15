@@ -51,6 +51,8 @@ pip install -e git+https://github.com/samson-wang/cython_bbox.git#egg=cython-bbo
 # if you face an error in lap pip install
 
 conda install -c conda-forge lap
+
+# Download the weights from the google drive link given above, and save all the weights in the /weights folder
 ```
 **Inference Script**
 ```
